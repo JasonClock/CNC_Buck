@@ -1,0 +1,76 @@
+window.chatgptSource = 'https://digital-assistant.st.com';
+
+// Include dynamically embed.js after 'email-initialized' event
+window.addEventListener('email-initialized', function(event) {
+  console.log('Received email-initialized event', event);
+  ((d) => {
+    d.head.appendChild(
+        Object.assign(d.createElement('script'), {
+          src: window.chatgptSource + '/embed.js?v=' + Date.now(),
+          async: 1,
+        }),
+    );
+  })(document);
+});
+
+// This will be called on page load to configure ChatGPT
+window.configureChatGPT = async function () {
+  // Get current user rank from st community
+  const communityMetadata = {
+    st_community_rank: '',
+    st_community_page: window.location.href,
+  };
+
+  return {
+    iframeOptions: {
+      viewMode: 'compact',
+      url: window.chatgptSource,
+    },
+    app: {
+      platform: 'st.com',
+      metadata: communityMetadata,
+      hostLogin: true,
+      guestDailyLimitText: "Thank you for using STM32 Sidekick. Please sign in to continue.",
+      guestInfoMessage: "To unlock more {{tooltip:advanced features|<b>Advanced features include:</b><ul><li>Multiple chats with history</li><li>Rename chats for easy reference</li><li>Search all conversations</li><li>Consistent experience across browsers</li></ul>}} with STM32 Sidekick,<br> please {{login:sign-in}} to your MyST account",
+      personasParams: {
+        'sidekick': {
+          chatTitle: 'STM32 Sidekick',
+        },
+      },
+      onOpen: async () => {
+        console.log('Chat opened');
+      },
+      onClose: () => {
+        console.log('Chat closed');
+      },
+      checkForAnonymousLogin: async () => {
+              const loginRequiredCookie = isUserLoggedIn();
+              return !loginRequiredCookie;
+            },
+        onLoginRequired: () => {
+              // Redirect to CAS login
+              const url = new URL(window.location.href);
+			  const currentLang = document.documentElement.lang || 'en';
+              url.searchParams.set('_sk', '1');
+              window.location.href = 'https://my.st.com/cas/login?lang=' + currentLang + '&service=' + encodeURIComponent(url.toString());
+            },
+    },
+    openFab: {
+      showFab: true,
+      iconUrl: 'https://digital-assistant.st.com/persona/small/sidekick.png',
+      style: {
+        borderRadius: '50%',
+      },
+      tooltipText: "Try out STM32 Sidekick, your AI-powered technical assistant",
+      tooltipTime: 30000
+
+    },
+    queryParams: {
+      personas: ['sidekick'],
+    },
+  };
+};
+
+function isUserLoggedIn() {
+  return window.isSearchUserLoggedIn === 'true' || window.isSearchUserLoggedIn === true;
+}

@@ -1,0 +1,1 @@
+window.Node&&-1<window.location.href.indexOf("user-registration")&&(Node.prototype.originalAppendChild=Node.prototype.appendChild);

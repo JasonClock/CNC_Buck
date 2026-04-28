@@ -1,0 +1,1 @@
+$(document).ready(function(){var a=document.querySelector("#designWinIcon");a&&$.ajax({url:"/bin/st/personalized.designwin",data:{pagePath:a.dataset.producturl},type:"POST",success:function(b){"true"===b?$("#designWinIcon").show():$("#designWinIcon").hide();$("#designWinIcon").css("opacity","1");return b}})});

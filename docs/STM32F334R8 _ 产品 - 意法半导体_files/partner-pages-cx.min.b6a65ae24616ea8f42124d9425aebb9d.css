@@ -1,0 +1,38 @@
+#partnerProductTable{width:100% !important}
+#partnerProductTable_wrapper{overflow-x:auto}
+.modal-st{background:white;box-shadow:rgba(0,0,0,0.4) 1px 2px 7px;display:block;left:50%;margin-left:auto;margin-right:auto;position:fixed;top:30%;transform:translate(-50%,0);width:610px;z-index:9004}
+@media(max-width:upper-bound(0,40em)){.modal-st{width:100%}
+}
+.modal-container{padding:10px 16px}
+h1.title-modal{border-bottom:1px solid #aaa;color:#03234b;margin-bottom:30px;padding-bottom:5px;padding-left:10px}
+.description-container{display:block;margin:20px 0 0}
+.pp-popup-text-modal{color:#03234b;display:block;font-size:14px;font-weight:bold;margin-bottom:25px;text-transform:uppercase}
+.pp-popup-image{display:inline-block;width:100px}
+.pp-popup-descriptioncontent{display:inline-block;margin-left:20px;vertical-align:middle;width:450px}
+.pp-popup-descriptioncontent p{font-size:14px;margin:0}
+p#description-modal{color:#03234b;font-size:17px;margin-top:20px;vertical-align:middle}
+.btn-to-escape{display:flex;flex-direction:row-reverse;text-align:right;width:100%}
+button.form-submit-cancel{margin-top:25px;min-width:20%}
+button.form-submit-primary{margin-right:5px;margin-top:25px;min-width:20%}
+@media screen and (max-width:640px){#modal-container .pp-popup-image{height:100%;margin-bottom:25px;vertical-align:middle;width:60px}
+#modal-container .modal-container{padding:15px 10px}
+#modal-container .description-container{align-items:center;display:flex;flex-direction:column}
+#modal-container .modal-st{width:100%}
+#modal-container .pp-popup-descriptioncontent{margin-left:0;width:100%}
+#modal-container .btn-to-escape{display:flex;flex-direction:row-reverse;justify-content:space-between}
+#modal-container .btn-to-escape button{margin-right:0}
+}
+#modal-background.modal-backdrop{display:none;height:100%;z-index:9003}
+#modal-container{display:none}
+#overview-scroll .st-partner-description .st-partner-details-box p{margin-bottom:5px}
+.st-partner-details-box>img{padding-bottom:10px}
+.btn-to-escape button{height:42px}
+@media screen and (max-width:640px){#modal-container .modal-st{width:95%}
+#modal-container .description-container{padding:0 5px}
+#modal-container .pp-popup-image{margin-bottom:15px}
+#modal-container .btn-to-escape{justify-content:center}
+#modal-container .btn-to-escape button{width:120px;margin:15px}
+.pp-popup-text-modal{margin-bottom:10px}
+}
+.cq-wcm-edit .hidden{display:block}
+.cq-wcm-edit .st-page-content>div[data-page-content].st-invisible{height:auto}

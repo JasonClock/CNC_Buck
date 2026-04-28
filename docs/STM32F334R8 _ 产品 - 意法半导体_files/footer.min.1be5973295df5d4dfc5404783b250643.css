@@ -1,0 +1,59 @@
+@font-face{font-family:"LubalinGraphStd-Medium";src:url("home-only-fonts/media/app/fonts/ITCLubalinGraphW03-Medium.woff2") format("woff2"),url("home-only-fonts/media/app/fonts/ITCLubalinGraphW03-Medium.woff") format("woff")}
+.st-font--highlight{font-family:LubalinGraphStd-Medium,Arial,Helvetica,sans-serif}
+.st-footer{border-top:2px solid #f0f1f3}
+.st-footer .st-container{background:#f7f8fa}
+.st-footer__headline,.st-footer__nav>li:first-child{color:#03234b;font-family:'LubalinGraphStd-Medium';font-size:.857rem;font-weight:normal;letter-spacing:.5px;padding-bottom:0;overflow-wrap:break-word}
+.row.st-row.st-flex.st-flex-justify--all-center{max-width:1500px;padding:60px 0 120px;border-bottom:1px solid #dfdfdf}
+.st-footer>.st-container>.row.st-row:not(.st-flex-justify--all-center){padding:60px 20px 35px}
+.st-footer__copy{margin-top:0;color:#525a63;font-weight:normal;font-family:Arial;font-size:.667rem;overflow-wrap:break-wordd}
+.st-footer__nav li{margin-top:40px;font-size:.667rem;font-weight:bold;overflow-wrap:break-word}
+@media screen and (min-width:1025px){.st-footer__nav li:not(:nth-child(2)):not(:first-child){margin-top:24px}
+}
+form.subscription-form .st-input--newsletter input[type='text']{height:60px !important;border:0;background-color:#fff;font-size:.667rem;padding:25px 2px 25px 20px;color:#6a7077;max-width:230px;transition:background-color linear .2s;width:calc(100% - 70px);overflow-wrap:break-word}
+form.subscription-form .st-input--newsletter input[type='text']::placeholder{color:#6a7077}
+submit#subscription-submit,button#subscription-submit{background-color:#ffd200;opacity:1;border:0;color:#03234b;font-weight:bold}
+.st-footer .subscription-form .st-flex--sm-nowrap{margin-bottom:0}
+.st-footer .subscription-form{margin-bottom:150px}
+.st-footer .subscription-form .st-flex--sm-nowrap:hover input,.st-footer .subscription-form .st-input--newsletter input[type='text']:focus{background-color:#dbdee2}
+.st-footer .subscription-form .st-flex--sm-nowrap input[type='text']:focus::placeholder{color:#bbb}
+li a.st-crew-socialbutton svg{height:35px;width:35px;margin:0 10px}
+.st-footer__network{margin-top:20px;display:flex;flex-direction:row;flex-wrap:wrap;column-gap:5.8px}
+.st-footer__network li{display:flex}
+li:first-child a.st-crew-socialbutton svg{margin-left:0}
+.st-footer-logo-wrap{margin-bottom:20px}
+.st-footer-logo-wrap img{width:112px;margin:15px;padding:15px}
+.st-footer--overlap{position:relative;z-index:120}
+.st-input--newsletter-container .subscription-form label{color:#464650}
+@media(min-width:1025px){:lang(zh) li.st-input--newsletter-container{height:60px}
+}
+@media(max-width:1024px){.row.st-row.st-flex.st-flex-justify--all-center{justify-content:flex-start}
+.st-footer__nav li{text-align:left !important}
+.st-footer__nav>li:not(:first-child){padding-bottom:0}
+.st-footer__nav{margin-bottom:70px}
+.st-footer__headline,.st-footer__nav>li:first-child{font-size:20px;text-align:left}
+.st-footer .subscription-form{margin:0}
+p.hide-for-small.st-footer__headline{display:block !important;text-align:left}
+.st-footer__network{text-align:left}
+.row.st-row.st-flex.st-flex-justify--all-center{padding-bottom:60px}
+}
+@media(min-width:640px) and (max-width:1024px){.small-12.large-9.st-footer-tablet-visual .small-12{width:49.5%;display:inline-block;float:none;flex-wrap:wrap;vertical-align:top}
+:lang(ja) .small-12.large-9.st-footer-tablet-visual .small-12:nth-child(odd){width:60%}
+:lang(ja) .small-12.large-9.st-footer-tablet-visual .small-12:nth-child(even){width:39%}
+}
+@media(max-width:640px){.st-footer-logo-wrap{margin-bottom:0}
+.st-footer-logo-wrap img{padding-left:0;width:100px}
+}
+.st-wechat-maintitle{margin-bottom:20px}
+.st-wechat-component-grid{display:grid;grid-template-columns:1fr 2fr;gap:20px;align-items:center}
+.st-wechat-component-qrcode{width:108px;height:auto}
+.st-wechat-component-qrcode img{width:100%}
+.st-wechat-logo-item{width:30px;height:auto;margin-right:10px}
+.st-wechat-logo-text span{font-family:Arial;font-size:15px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:1.4;letter-spacing:.9px;text-align:left;color:#525a63}
+.st-wechat-logo-wrap{display:flex}
+.st-wechat-static-search-wrap{margin-top:5px;display:flex;flex-direction:row;width:153px;height:35px;justify-content:center;align-items:center;background-color:#d9d9d9;border-radius:3px}
+.st-wechat-static-search-icon svg{width:21px;height:21px;vertical-align:middle}
+.st-wechat-static-search-text span{font-family:Arial;font-size:15px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:1.6;letter-spacing:normal;text-align:left;margin-left:10px;color:#525a63}
+.st-wechat-static-search-icon{display:flex}
+.st-wechat-static-search-text{display:flex}
+@media(min-width:1025px) and (max-width:1200px){.st-wechat-component-wrap{margin-left:-50px}
+}

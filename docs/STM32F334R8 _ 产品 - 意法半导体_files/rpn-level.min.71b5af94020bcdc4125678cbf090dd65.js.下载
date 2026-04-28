@@ -1,0 +1,1 @@
+digitalData=digitalData||{};digitalData.event=digitalData.event||[];digitalData.event[24]=digitalData.event[24]||{};digitalData.event[24].eventInfo=digitalData.event[24].eventInfo||{};digitalData.event[24].eventInfo.ProductFolder=digitalData.event[24].eventInfo.ProductFolder||{};digitalData.event[24].eventInfo.ProductFolder.eventName="View";

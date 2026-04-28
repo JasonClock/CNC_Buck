@@ -1,0 +1,1 @@
+self.addEventListener("install",function(b){self.skipWaiting()});self.addEventListener("activate",function(b){self.registration.unregister().then(function(){return self.clients.matchAll()}).then(function(c){c.forEach(function(a){return a.navigate(a.url)})})});

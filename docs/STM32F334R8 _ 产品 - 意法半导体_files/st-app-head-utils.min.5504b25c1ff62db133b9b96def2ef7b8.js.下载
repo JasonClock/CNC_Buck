@@ -1,0 +1,1 @@
+window.STFED=window.STFED||{};(function(b){window.STFED.onDomReady=function(a){b(a)};window.STFED.DateUtils={getDateString:function(){var a=new Date;return a.getFullYear()+"-"+(((a.getMonth()+1)/100).toFixed(2)+"").substring(2)+"-"+((a.getDate()/100).toFixed(2)+"").substring(2)}}})(jQuery);

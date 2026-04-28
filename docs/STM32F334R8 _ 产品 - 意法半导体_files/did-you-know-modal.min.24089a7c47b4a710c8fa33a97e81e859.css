@@ -1,0 +1,37 @@
+.did-you-know{background:white;border-radius:3px;bottom:10px;box-shadow:0 0 30px 0 #a2a2a2;width:400px;padding:12px 20px 20px 20px;position:fixed;right:50px;display:none}
+.did-you-know [data-abide] .error small.error,.did-you-know .server-error small.error{max-width:100%;padding:10px 0 0 0;text-align:left;text-transform:none}
+.did-you-know small.error,.did-you-know [class^="substep-"]:not(.shown),.did-you-know--content:not(.shown){display:none}
+.did-you-know .invalid .error,.did-you-know .server-error small.error.shown{display:block}
+.did-you-know form .row:not(:first-child){margin-top:8px}
+.did-you-know p,.did-you-know [class^="substep-"] p:last-child{margin-bottom:10px}
+.did-you-know .accept-terms-data input[type="checkbox"]{margin:2px 6px 0 0;vertical-align:top}
+.did-you-know .accept-terms-data label{font-weight:normal}
+.did-you-know .accept-terms-data p{font-size:13px}
+.did-you-know .accept-terms-data.error{color:#e6007e}
+.did-you-know .accept-terms-data .stay-informed-text{font-size:14px}
+.did-you-know .short-description{font-size:14px;line-height:1.375}
+.did-you-know--header h3,.did-you-know .label-text{margin-bottom:5px}
+.did-you-know .label-text{display:inline-block}
+.did-you-know form small.error{margin:10px 0;max-width:none;line-height:1.375;padding:0;text-align:left}
+.did-you-know button{border:0;margin-right:0;margin-left:0;margin-bottom:0}
+.did-you-know .dont-show .st-checkbox label,.did-you-know p:last-child{margin-bottom:0}
+.did-you-know fieldset{border:0;margin:0;padding:0}
+.did-you-know fieldset input{margin-left:7px;float:left;padding:10px 15px;width:45px}
+.did-you-know fieldset input:first-child{margin-left:0}
+.did-you-know--submit-email-row button,.did-you-know-validate-code button{float:right}
+.did-you-know--submit-email-row button,.did-you-know--didnt-receive-code{margin-top:24px}
+.did-you-know--submit-email-row button+label{margin-right:87px}
+.did-you-know .code-group.invalid .label-text{color:#e6007e}
+.did-you-know .code-group.invalid input.error{border-color:#e6007e}
+.did-you-know--success-subscription p{font-size:14px;line-height:1.375}
+.did-you-know--success-subscription p:not(:first-child){margin-top:15px}
+.did-you-know-validate-code,.did-you-know--didnt-receive-code-form,.did-you-know--didnt-receive-code-form .inline+p{margin-top:10px}
+.did-you-know--didnt-receive-code-form .inline{display:inline}
+.did-you-know .spinner-preloader{align-items:center;background:rgba(0,0,0,0.25);display:flex;height:100%;left:0;position:absolute;top:0;width:100%}
+.did-you-know [data-abide] small.error.backend-error{display:none}
+.did-you-know.has-backend-error [data-abide] small.error.backend-error{display:block}
+.did-you-know.has-backend-error.did-you-know--didnt-receive-code-form .backend-error{display:inline-block;padding-left:0}
+small.remote-validation-notification{display:none;margin-top:5px}
+.remote-validation.remote-validating small.remote-validation-notification{display:block;order:1}
+.did-you-know span.read-more-tooltip{width:1000px !important;margin-left:-817px !important;margin-top:-150px !important}
+.did-you-know--submit-email-row-simple-subscribe button{margin-top:0}

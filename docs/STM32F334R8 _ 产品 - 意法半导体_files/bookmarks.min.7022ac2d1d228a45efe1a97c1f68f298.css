@@ -1,0 +1,22 @@
+.st-bmm-pointlike{height:0;width:0}
+.st-bmm-inactive.st-bmm-inactive{display:none}
+.st-bmm-container{width:22em;height:16em;max-width:95vw;display:flex;flex-direction:column;background-color:white;position:relative;top:1.7em;right:12em;z-index:1999999;border:solid 1px #ccc}
+.st-bmm-container>div{padding:1em}
+div.st-bmm-top{flex:0 0 15%;display:flex;justify-content:space-between;align-items:center;padding-bottom:0}
+.st-bmm-anonymous .st-bmm-top{padding:1em;padding-bottom:0}
+.st-bmm-anonymous>span{padding:1em}
+.st-bmm-top>span{color:#03234b;font-size:.875rem;font-weight:bold;line-height:1.5}
+.st-bmm-close-icon.st-bmm-close-icon{cursor:pointer;pointer-events:initial}
+.st-bmm-mid{flex:1 0 auto;height:0}
+.st-bmm-bookmarks-list{height:100%;overflow:auto;display:flex;flex-direction:column;gap:.2em}
+.st-bmm-bookmarks-list::-webkit-scrollbar{width:.3em;background-color:white;margin-right:.2em}
+.st-bmm-bookmarks-list::-webkit-scrollbar-thumb{background-color:#3cb4e6;border-radius:5em}
+.st-bmm-bookmark-item{display:flex;align-items:center;justify-content:space-between;padding-right:.5em}
+.st-bmm-bookmark-item>a{font-size:.78rem}
+.st-bmm-item-category{color:#ccc}
+div.st-bmm-bottom{background-color:#f8f8f8;height:3em;flex:0 0 15%;display:flex}
+.st-bmm-add-bookmark{cursor:pointer;display:flex;align-items:center;gap:.6em}
+.st-bmm-add-bookmark>span{color:#74757c;font-size:.825rem;font-weight:700}
+.st-bmm-add-bookmark-icon{fill:#3cb4e6}
+@media only screen and (max-width:640px){.st-bmm-container{position:fixed;left:0;top:12.5em;margin:2em;width:calc(100vw - 4em)}
+}
