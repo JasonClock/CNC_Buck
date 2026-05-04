@@ -7447,6 +7447,16 @@
 	)
 	(wire
 		(pts
+			(xy 149.86 30.48) (xy 142.24 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1605932a-5c46-496a-a167-2380c38ceeab")
+	)
+	(wire
+		(pts
 			(xy 344.17 80.01) (xy 346.71 80.01)
 		)
 		(stroke
@@ -9675,16 +9685,6 @@
 		)
 		(uuid "67d46bdb-fce2-4728-ba5f-2297a286af54")
 	)
-	(label "NRST"
-		(at 142.24 19.05 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "7f9a6a92-d9c6-4c22-b268-88d136013998")
-	)
 	(label "USART3_TX"
 		(at 25.4 71.12 180)
 		(effects
@@ -9814,6 +9814,16 @@
 			(justify left bottom)
 		)
 		(uuid "e74e1b77-51f4-4287-9e27-5acc54691baa")
+	)
+	(label "NRST"
+		(at 149.86 30.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e965eedf-9460-4966-a655-900a02875fe6")
 	)
 	(label "U1_RX"
 		(at 115.57 62.23 180)
@@ -14337,7 +14347,7 @@
 				)
 			)
 		)
-		(property "Value" "SS34"
+		(property "Value" "SS26"
 			(at 68.8975 209.55 0)
 			(effects
 				(font
@@ -16532,6 +16542,72 @@
 			(project "数控buck"
 				(path "/80f4f4fe-c3fa-41cd-a010-dacb4b3084d3"
 					(reference "#PWR032")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 142.24 19.05 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b0559df5-5edc-46af-af1b-4877feb418f5")
+		(property "Reference" "#PWR059"
+			(at 142.24 22.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 142.24 13.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 142.24 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 142.24 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "74927ab1-6a31-4cec-86eb-0b4cc5a2dbe9")
+		)
+		(instances
+			(project "数控buck"
+				(path "/80f4f4fe-c3fa-41cd-a010-dacb4b3084d3"
+					(reference "#PWR059")
 					(unit 1)
 				)
 			)
