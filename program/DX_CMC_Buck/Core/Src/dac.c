@@ -18,7 +18,7 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include "dac.h"
+#include "MyDAC.h"
 
 /* USER CODE BEGIN 0 */
 

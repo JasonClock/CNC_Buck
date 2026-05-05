@@ -31,8 +31,8 @@ typedef struct
 
 
 /*=========静态变量=========*/
-PID_t PID_volt;
-PID_t PID_Current;
+// PID_t PID_volt;
+// PID_t PID_Current;
 
 
 

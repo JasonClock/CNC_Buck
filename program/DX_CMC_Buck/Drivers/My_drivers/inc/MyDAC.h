@@ -14,8 +14,8 @@ typedef struct {
 }DAC_Struction;
 
 /*=======DAC变量=========*/
-DAC_Struction DAC_Volt = {hadc1};
-DAC_Struction DAC_Current;
+// DAC_Struction DAC_Volt ;
+// DAC_Struction DAC_Current;
 
 /*=======外设启动========*/
 void DAC_Start();
