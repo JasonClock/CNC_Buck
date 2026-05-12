@@ -32,7 +32,8 @@ message("Build type: " ${CMAKE_BUILD_TYPE})
 enable_language(C ASM)
 
 # Create an executable object type
-add_executable(${CMAKE_PROJECT_NAME})
+add_executable(${CMAKE_PROJECT_NAME}
+)
 
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
@@ -42,11 +43,18 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined library search paths
 )
 
+
+
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
-        Drivers/My_drivers/src
-        app/control/src
+        Drivers/My_drivers/src/Myhrtim.c
+        Drivers/My_drivers/src/MyDAC.c
+        Drivers/My_drivers/src/MyADC.c
+        Drivers/My_drivers/src/Mycomp.c
+        app/control/src/PID.c
+        Drivers/My_drivers/src/BSP_Uart.c
+        app/Send/src/UART_Protocol.c
 )
 
 # Add include paths
@@ -54,6 +62,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
         Drivers/My_drivers/inc
         app/control/inc
+        app/Send/inc
 )
 
 # Add project symbols (macros)

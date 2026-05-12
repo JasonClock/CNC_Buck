@@ -4,5 +4,18 @@
 
 #ifndef CNC_BUCK_HRTIM_H
 #define CNC_BUCK_HRTIM_H
+/*=======头文件========*/
+#include <main.h>
+#include <Myhrtim.h>
+#include <stm32f3xx_hal_hrtim.h>
+#include <hrtim.h>
+/*========宏定义========*/
+#define HRTIM_PERIOD 23040-1
+#define HRTIM_PERIOD_Half (23040-1)/2
+
+
+void HRTIM_Start(void);
+
+void HRTIM_change_Duty(uint16_t Duty);
 
 #endif //CNC_BUCK_HRTIM_H

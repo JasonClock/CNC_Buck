@@ -1,0 +1,8 @@
+//
+// Created by 18032 on 2026/5/12.
+//
+
+#ifndef DX_CMC_BUCK_UART_PROTOCOL_H
+#define DX_CMC_BUCK_UART_PROTOCOL_H
+
+#endif //DX_CMC_BUCK_UART_PROTOCOL_H
