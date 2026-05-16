@@ -12,13 +12,18 @@ void HRTIM_Start(void) {
 
 }
 
-void HRTIM_Change_Duty(uint16_t Duty) {
-    uint16_t Duty_Half = Duty / 2;
-    uint16_t Duty_Half_Value = Duty_Half * HRTIM_PERIOD;
+void HRTIM_change_Duty(float Duty){
+    uint16_t Duty_Half_Value = (uint32_t)(Duty * HRTIM_PERIOD / 2.0f);
 
     uint16_t Duty_Compare_1 = HRTIM_PERIOD_Half - Duty_Half_Value;
     uint16_t Duty_Compare_3 = HRTIM_PERIOD_Half + Duty_Half_Value;
 
-    __HAL_HRTIM_SetCompare(&hhrtim1, HRTIM_TIMERINDEX_TIMER_A, HRTIM_COMPAREUNIT_1, Duty_Compare_1);
-    __HAL_HRTIM_SetCompare(&hhrtim1, HRTIM_TIMERINDEX_TIMER_A, HRTIM_COMPAREUNIT_3, Duty_Compare_3);
+    __HAL_HRTIM_SetCompare(&hhrtim1,
+                            HRTIM_TIMERINDEX_TIMER_A,
+                            HRTIM_COMPAREUNIT_1,
+                            Duty_Compare_1);
+    __HAL_HRTIM_SetCompare(&hhrtim1,
+                            HRTIM_TIMERINDEX_TIMER_A,
+                            HRTIM_COMPAREUNIT_3,
+                            Duty_Compare_3);
 }

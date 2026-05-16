@@ -3,7 +3,7 @@
 //
 
 #include "../inc/MyADC.h"
-
+#include <PID.h>
 ADC_ConfigTypeDef ADC_Voltage = {
     .hadc = &hadc2,
     .ADC_Channel = ADC_CHANNEL_13,
@@ -29,10 +29,16 @@ void ADC_DMA_Start(const ADC_ConfigTypeDef *ADC_Config)
     while (HAL_ADCEx_Calibration_Start(ADC_Config->hadc, ADC_SINGLE_ENDED) != HAL_OK);
     HAL_ADC_Start_DMA(ADC_Config->hadc, (uint32_t*)ADC_Config->ADC_Buf, 1);
     __HAL_DMA_DISABLE_IT(ADC_Config->hadc->DMA_Handle, DMA_IT_HT);
-    __HAL_DMA_DISABLE_IT(ADC_Config->hadc->DMA_Handle, DMA_IT_TC);
+    // __HAL_DMA_DISABLE_IT(ADC_Config->hadc->DMA_Handle, DMA_IT_TC);
 }
 
 uint16_t ADC_DMA_Get_Value(ADC_ConfigTypeDef ADC_Config) {
     return ADC_Config.ADC_Buf[0];
 }
 
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
+    if (hadc->Instance == ADC2) {
+        PID_volt.PID_Flag = 1;
+    }
+
+}

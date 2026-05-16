@@ -23,7 +23,6 @@ extern DAC_Struction DAC_Current;
 void DAC_Start(DAC_Struction* dac_structure);
 
 /*========阈值电压设置==========*/
-void Set_DAC_Voltage(float volt, DAC_HandleTypeDef* hdac, uint32_t Channel);
-
+void Set_DAC_Value_volt(float volt, DAC_Struction* DAC_Structure);
 
 #endif //CNC_BUCK_DAC_H

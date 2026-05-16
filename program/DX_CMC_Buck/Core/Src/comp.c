@@ -71,7 +71,7 @@ void MX_COMP6_Init(void)
   hcomp6.Init.Output = COMP_OUTPUT_NONE;
   hcomp6.Init.OutputPol = COMP_OUTPUTPOL_NONINVERTED;
   hcomp6.Init.BlankingSrce = COMP_BLANKINGSRCE_NONE;
-  hcomp6.Init.TriggerMode = COMP_TRIGGERMODE_IT_RISING;
+  hcomp6.Init.TriggerMode = COMP_TRIGGERMODE_NONE;
   if (HAL_COMP_Init(&hcomp6) != HAL_OK)
   {
     Error_Handler();
@@ -123,9 +123,6 @@ void HAL_COMP_MspInit(COMP_HandleTypeDef* compHandle)
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-    /* COMP6 interrupt Init */
-    HAL_NVIC_SetPriority(COMP4_6_IRQn, 0, 0);
-    HAL_NVIC_EnableIRQ(COMP4_6_IRQn);
   /* USER CODE BEGIN COMP6_MspInit 1 */
 
   /* USER CODE END COMP6_MspInit 1 */
@@ -147,14 +144,7 @@ void HAL_COMP_MspDeInit(COMP_HandleTypeDef* compHandle)
     HAL_GPIO_DeInit(GPIOB, GPIO_PIN_0);
 
     /* COMP4 interrupt Deinit */
-  /* USER CODE BEGIN COMP4:COMP4_6_IRQn disable */
-    /**
-    * Uncomment the line below to disable the "COMP4_6_IRQn" interrupt
-    * Be aware, disabling shared interrupt may affect other IPs
-    */
-    /* HAL_NVIC_DisableIRQ(COMP4_6_IRQn); */
-  /* USER CODE END COMP4:COMP4_6_IRQn disable */
-
+    HAL_NVIC_DisableIRQ(COMP4_6_IRQn);
   /* USER CODE BEGIN COMP4_MspDeInit 1 */
 
   /* USER CODE END COMP4_MspDeInit 1 */
@@ -169,15 +159,6 @@ void HAL_COMP_MspDeInit(COMP_HandleTypeDef* compHandle)
     PB11     ------> COMP6_INP
     */
     HAL_GPIO_DeInit(GPIOB, GPIO_PIN_11);
-
-    /* COMP6 interrupt Deinit */
-  /* USER CODE BEGIN COMP6:COMP4_6_IRQn disable */
-    /**
-    * Uncomment the line below to disable the "COMP4_6_IRQn" interrupt
-    * Be aware, disabling shared interrupt may affect other IPs
-    */
-    /* HAL_NVIC_DisableIRQ(COMP4_6_IRQn); */
-  /* USER CODE END COMP6:COMP4_6_IRQn disable */
 
   /* USER CODE BEGIN COMP6_MspDeInit 1 */
 

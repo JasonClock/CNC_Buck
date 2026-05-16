@@ -34,6 +34,7 @@
 #include <Myhrtim.h>
 #include <string.h>
 #include <BSP_Uart.h>
+#include <PID.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -111,9 +112,17 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
-  HRTIM_Start();
+
+  PID_Init(&PID_volt);
   ADC_DMA_Start(&ADC_Voltage);
 
+  HRTIM_Start();
+  // DAC_Start(&DAC_Volt);
+  // COMP_Start();
+
+  uint32_t vofa_tick = 0;
+  // Set_DAC_Value_volt(30.0f, &DAC_Volt);
+  // HAL_UART_Receive_IT(&huart3, &uart3_rx_byte, sizeof(uart3_rx_buf));
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -123,7 +132,20 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    Send_Buck_Volt_date(ADC_Voltage.ADC_Buf[0]);
+    if (PID_volt.PID_Flag)
+    {
+      PID_volt.PID_Flag = 0;
+
+      PID_control_volt(&PID_volt);
+    }
+    /* 串口数据低频发送，比如 20ms 一次，也就是 50Hz */
+    if (HAL_GetTick() - vofa_tick >= 20)
+    {
+      vofa_tick = HAL_GetTick();
+
+      Send_Buck_Volt_date(ADC_Voltage.ADC_Buf[0]);
+    }
+    // Send_Buck_Volt_date(ADC_Voltage.ADC_Buf[0]);
 
   }
   /* USER CODE END 3 */

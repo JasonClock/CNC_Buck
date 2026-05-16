@@ -3,3 +3,8 @@
 //
 
 #include "../inc/Mycomp.h"
+
+void COMP_Start(void)
+{
+    HAL_COMP_Start(&hcomp6);
+}

@@ -57,11 +57,13 @@
 /* External variables --------------------------------------------------------*/
 extern DMA_HandleTypeDef hdma_adc1;
 extern DMA_HandleTypeDef hdma_adc2;
+extern ADC_HandleTypeDef hadc1;
+extern ADC_HandleTypeDef hadc2;
 extern COMP_HandleTypeDef hcomp4;
-extern COMP_HandleTypeDef hcomp6;
 extern HRTIM_HandleTypeDef hhrtim1;
 extern DMA_HandleTypeDef hdma_usart3_tx;
 extern UART_HandleTypeDef huart1;
+extern UART_HandleTypeDef huart3;
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -246,6 +248,21 @@ void DMA1_Channel4_IRQHandler(void)
 }
 
 /**
+  * @brief This function handles ADC1 and ADC2 interrupts.
+  */
+void ADC1_2_IRQHandler(void)
+{
+  /* USER CODE BEGIN ADC1_2_IRQn 0 */
+
+  /* USER CODE END ADC1_2_IRQn 0 */
+  HAL_ADC_IRQHandler(&hadc1);
+  HAL_ADC_IRQHandler(&hadc2);
+  /* USER CODE BEGIN ADC1_2_IRQn 1 */
+
+  /* USER CODE END ADC1_2_IRQn 1 */
+}
+
+/**
   * @brief This function handles USART1 global interrupt / USART1 wake-up interrupt through EXT line 25.
   */
 void USART1_IRQHandler(void)
@@ -260,6 +277,20 @@ void USART1_IRQHandler(void)
 }
 
 /**
+  * @brief This function handles USART3 global interrupt / USART3 wake-up interrupt through EXT line 28.
+  */
+void USART3_IRQHandler(void)
+{
+  /* USER CODE BEGIN USART3_IRQn 0 */
+
+  /* USER CODE END USART3_IRQn 0 */
+  HAL_UART_IRQHandler(&huart3);
+  /* USER CODE BEGIN USART3_IRQn 1 */
+
+  /* USER CODE END USART3_IRQn 1 */
+}
+
+/**
   * @brief This function handles COMP4 and COMP6 interrupts through EXTI lines 30 and 32.
   */
 void COMP4_6_IRQHandler(void)
@@ -268,7 +299,6 @@ void COMP4_6_IRQHandler(void)
 
   /* USER CODE END COMP4_6_IRQn 0 */
   HAL_COMP_IRQHandler(&hcomp4);
-  HAL_COMP_IRQHandler(&hcomp6);
   /* USER CODE BEGIN COMP4_6_IRQn 1 */
 
   /* USER CODE END COMP4_6_IRQn 1 */

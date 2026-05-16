@@ -12,15 +12,17 @@
 
 /*============*/
 
-
-
-
 // typedef struct {
 //     uint8_t *Tx_Buffer;
 //     uint16_t Tx_Buffer_Size;
 //     volatile uint8_t Tx_Busy_Flag;
 // } UART_DMA_ConfigTypeDef;
 
+/*============静态变量==========*/
+static volatile uint8_t uart3_dma_tx_busy = 0;
+static uint8_t uart3_tx_buf[16];
+static volatile uint8_t uart3_rx_byte = 0;
+static volatile char uart3_rx_buf[16];
 
 
 void BSP_UART_SendString(const uint8_t *data, uint16_t len);
