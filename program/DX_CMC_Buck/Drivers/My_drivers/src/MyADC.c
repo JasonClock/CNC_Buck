@@ -11,7 +11,7 @@ ADC_ConfigTypeDef ADC_Voltage = {
 };
 ADC_ConfigTypeDef ADC_Current = {
     .hadc = &hadc1,
-    .ADC_Channel = ADC_CHANNEL_12,
+    .ADC_Channel = ADC_CHANNEL_13,
     .ADC_Buf = {0}
 };
 

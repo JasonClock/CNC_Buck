@@ -33,6 +33,8 @@ enable_language(C ASM)
 
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME}
+
+
 )
 
 # Add STM32CubeMX generated sources
@@ -55,6 +57,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
         app/control/src/PID.c
         Drivers/My_drivers/src/BSP_Uart.c
         app/Send/src/UART_Protocol.c
+        app/control/src/protect.c
 )
 
 # Add include paths

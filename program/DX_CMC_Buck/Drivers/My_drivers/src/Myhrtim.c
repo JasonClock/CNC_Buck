@@ -27,3 +27,4 @@ void HRTIM_change_Duty(float Duty){
                             HRTIM_COMPAREUNIT_3,
                             Duty_Compare_3);
 }
+

@@ -32,6 +32,9 @@ typedef struct
     float New_Error;    //当前误差
 
     volatile uint8_t PID_Flag;   //PID控制标志位
+    volatile uint8_t PID_OVP_Flag;   //过压保护标志位
+    volatile uint8_t PID_OCP_Flag;  //过流保护标志位
+    volatile uint8_t PID_OPP_Flag;  //过功率保护标志位
 } PID_t;
 
 

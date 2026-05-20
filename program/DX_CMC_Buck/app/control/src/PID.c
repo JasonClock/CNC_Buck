@@ -45,6 +45,8 @@ void PID_Init(PID_t *PID)
     PID->New_Error = 0;
 
     PID->PID_Flag = 1;
+    PID->PID_OCP_Flag = 0;
+    PID->PID_OVP_Flag = 0;
 }
 
 /**
@@ -150,10 +152,3 @@ void PID_control_volt(PID_t *PID)
         // PID_Output(PID);
 }
 
-
-// void PID_output(PID_t *PID) {
-//     uint16_t duty = (uint16_t)(PID->Output / 30.0f * 4095);
-//
-//     HRTIM_change_Duty(duty);
-//
-// }
