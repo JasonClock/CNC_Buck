@@ -117,12 +117,12 @@ int main(void)
   ADC_DMA_Start(&ADC_Voltage);  //ADC启动 DMA传输
   HRTIM_Start();  //  启动HRTIM定时器和输出
   DAC_Start(&DAC_Volt);  //DAC启动
-  COMP_Start(); //比较器启动
+  // COMP_Start(); //比较器启动
 
   uint32_t vofa_tick = 0;   //电压数据发送定时器
-  uint32_t protect_tick = 0;  //触发保护检测的定时器
-
-  Set_DAC_Value_volt(26.0f, &DAC_Volt);   //过压保护阈值设置
+  // uint32_t protect_tick = 0;  //触发保护检测的定时器
+  //
+  // Set_DAC_Value_volt(26.0f, &DAC_Volt);   //过压保护阈值设置
   // HAL_UART_Receive_IT(&huart3, &uart3_rx_byte, sizeof(uart3_rx_buf));
   /* USER CODE END 2 */
 
@@ -135,28 +135,28 @@ int main(void)
     /* USER CODE BEGIN 3 */
 
     /*=======保护状态检测========*/
-    if (PID_volt.PID_OVP_Flag || PID_volt.PID_OCP_Flag) {
-      if (HAL_GetTick() - protect_tick >= 100) {
-        /*=======电压保护状态检测========*/
-        if (PID_volt.PID_OVP_Flag)
-        {
-          OVP_Check();
-        }
-        /*=======电流保护状态检测========*/
-        // if (PID_volt.PID_OCP_Flag){
-        //     OCP_Check();
-        // }
-        if (!PID_volt.PID_OVP_Flag && !PID_volt.PID_OCP_Flag) {
-          __HAL_HRTIM_CLEAR_FLAG(&hhrtim1, HRTIM_FLAG_FLT3);
-          HAL_HRTIM_WaveformOutputStart(&hhrtim1,
-            HRTIM_OUTPUT_TA1 | HRTIM_OUTPUT_TA2);
-
-        }
-      }
-    }
+    // if (PID_volt.PID_OVP_Flag || PID_volt.PID_OCP_Flag) {
+    //   if (HAL_GetTick() - protect_tick >= 100) {
+    //     /*=======电压保护状态检测========*/
+    //     if (PID_volt.PID_OVP_Flag)
+    //     {
+    //       OVP_Check();
+    //     }
+    //     /*=======电流保护状态检测========*/
+    //     // if (PID_volt.PID_OCP_Flag){
+    //     //     OCP_Check();
+    //     // }
+    //     if (!PID_volt.PID_OVP_Flag && !PID_volt.PID_OCP_Flag) {
+    //       __HAL_HRTIM_CLEAR_FLAG(&hhrtim1, HRTIM_FLAG_FLT3);
+    //       HAL_HRTIM_WaveformOutputStart(&hhrtim1,
+    //         HRTIM_OUTPUT_TA1 | HRTIM_OUTPUT_TA2);
+    //
+    //     }
+    //   }
+    // }
 
     /*=========PID控制===========*/
-    if (PID_volt.PID_OVP_Flag && PID_volt.PID_OCP_Flag)
+    if (!PID_volt.PID_OVP_Flag && !PID_volt.PID_OCP_Flag)
     {
       if (PID_volt.PID_Flag) {
           PID_volt.PID_Flag = 0;
@@ -167,7 +167,7 @@ int main(void)
     }
 
     /*==串口数据低频发送，比如 20ms 一次，也就是 50Hz==*/
-    if (HAL_GetTick() - vofa_tick >= 20)
+    if (HAL_GetTick() - vofa_tick >= 5)
     {
       vofa_tick = HAL_GetTick();
 
