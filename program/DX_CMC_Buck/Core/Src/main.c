@@ -101,6 +101,7 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
+  HAL_Delay(100);
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_HRTIM1_Init();
@@ -113,16 +114,17 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
+  HAL_Delay(100); // 等待外设稳定
   PID_Init(&PID_volt);  //PID初始话
   ADC_DMA_Start(&ADC_Voltage);  //ADC启动 DMA传输
   HRTIM_Start();  //  启动HRTIM定时器和输出
-  DAC_Start(&DAC_Volt);  //DAC启动
-  COMP_Start(); //比较器启动
+  // DAC_Start(&DAC_Volt);  //DAC启动
+  // COMP_Start(); //比较器启动
 
   uint32_t vofa_tick = 0;   //电压数据发送定时器
   uint32_t protect_tick = 0;  //触发保护检测的定时器
 
-  Set_DAC_Value_volt(26.0f, &DAC_Volt);   //过压保护阈值设置
+  // Set_DAC_Value_volt(26.0f, &DAC_Volt);   //过压保护阈值设置
   // HAL_UART_Receive_IT(&huart3, &uart3_rx_byte, sizeof(uart3_rx_buf));
   /* USER CODE END 2 */
 
@@ -156,7 +158,7 @@ int main(void)
     }
 
     /*=========PID控制===========*/
-    if (PID_volt.PID_OVP_Flag && PID_volt.PID_OCP_Flag)
+    if (!PID_volt.PID_OVP_Flag && !PID_volt.PID_OCP_Flag)
     {
       if (PID_volt.PID_Flag) {
           PID_volt.PID_Flag = 0;
@@ -167,7 +169,7 @@ int main(void)
     }
 
     /*==串口数据低频发送，比如 20ms 一次，也就是 50Hz==*/
-    if (HAL_GetTick() - vofa_tick >= 20)
+    if (HAL_GetTick() - vofa_tick >= 2)
     {
       vofa_tick = HAL_GetTick();
 

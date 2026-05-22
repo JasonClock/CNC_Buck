@@ -103,7 +103,7 @@ void PID_control_volt(PID_t *PID)
 
         /*=======I计算=======*/
          if (PID->Integral < PID->Integral_max && PID->Integral > -PID->Integral_max)
-              PID->Integral += PID->Ki * PID->New_Error;
+              PID->Integral += PID->Ki * PID->New_Error;    
 
         /*========积分限幅=========*/
 
