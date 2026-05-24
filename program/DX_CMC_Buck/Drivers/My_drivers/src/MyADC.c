@@ -39,6 +39,7 @@ uint16_t ADC_DMA_Get_Value(ADC_ConfigTypeDef ADC_Config) {
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
     if (hadc->Instance == ADC2) {
         PID_volt.PID_Flag = 1;
+        // PID_control_volt(&PID_volt);
     }
 
 }

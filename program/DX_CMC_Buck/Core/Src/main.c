@@ -137,35 +137,33 @@ int main(void)
     /* USER CODE BEGIN 3 */
 
     /*=======保护状态检测========*/
-    if (PID_volt.PID_OVP_Flag || PID_volt.PID_OCP_Flag) {
-      if (HAL_GetTick() - protect_tick >= 100) {
-        /*=======电压保护状态检测========*/
-        if (PID_volt.PID_OVP_Flag)
-        {
-          OVP_Check();
-        }
-        /*=======电流保护状态检测========*/
-        // if (PID_volt.PID_OCP_Flag){
-        //     OCP_Check();
-        // }
-        if (!PID_volt.PID_OVP_Flag && !PID_volt.PID_OCP_Flag) {
-          __HAL_HRTIM_CLEAR_FLAG(&hhrtim1, HRTIM_FLAG_FLT3);
-          HAL_HRTIM_WaveformOutputStart(&hhrtim1,
-            HRTIM_OUTPUT_TA1 | HRTIM_OUTPUT_TA2);
-
-        }
-      }
-    }
+    // if (PID_volt.PID_OVP_Flag || PID_volt.PID_OCP_Flag) {
+    //   if (HAL_GetTick() - protect_tick >= 100) {
+    //     /*=======电压保护状态检测========*/
+    //     if (PID_volt.PID_OVP_Flag)
+    //     {
+    //       OVP_Check();
+    //     }
+    //     /*=======电流保护状态检测========*/
+    //     // if (PID_volt.PID_OCP_Flag){
+    //     //     OCP_Check();
+    //     // }
+    //     if (!PID_volt.PID_OVP_Flag && !PID_volt.PID_OCP_Flag) {
+    //       __HAL_HRTIM_CLEAR_FLAG(&hhrtim1, HRTIM_FLAG_FLT3);
+    //       HAL_HRTIM_WaveformOutputStart(&hhrtim1,
+    //         HRTIM_OUTPUT_TA1 | HRTIM_OUTPUT_TA2);
+    //
+    //     }
+    //   }
+    // }
 
     /*=========PID控制===========*/
     if (!PID_volt.PID_OVP_Flag && !PID_volt.PID_OCP_Flag)
     {
       if (PID_volt.PID_Flag) {
           PID_volt.PID_Flag = 0;
+          PID_control_volt(&PID_volt);
       }
-
-
-      PID_control_volt(&PID_volt);
     }
 
     /*==串口数据低频发送，比如 20ms 一次，也就是 50Hz==*/
