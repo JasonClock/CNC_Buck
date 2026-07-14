@@ -1,0 +1,243 @@
+(footprint "L_Changjiang_FTC252012S"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "Inductor, Changjiang, FTC252012S, 2.5x2.0x1.2mm, (http://www.cjiang.com.cn/Pr_download_id_1117.html), generated with kicad-footprint-generator gen_inductor.py")
+	(tags "cjiang ftc molded power shielded")
+	(property "Reference" "REF**"
+		(at 0 -1.95 0)
+		(layer "F.SilkS")
+		(uuid "5ca7d615-5227-4bf6-a3f3-fd3f91ad9d9d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "L_Changjiang_FTC252012S"
+		(at 0 1.95 0)
+		(layer "F.Fab")
+		(uuid "1c13b9ae-c436-414f-9910-e51894114a9b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "96bd62c7-b1c6-498f-ab56-8e8b1182f2b7")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f6dc1bff-d77e-4b96-906b-4a8bdfb9843e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -1.36 -1.51)
+		(end 1.36 -1.51)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "13d78315-3944-4c08-bcc3-d168c8138f78")
+	)
+	(fp_line
+		(start 1.36 1.51)
+		(end -1.36 1.51)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "f04fde65-aaa1-449c-af9e-aea9842e90fc")
+	)
+	(fp_line
+		(start -1.55 -1.5)
+		(end -0.09 -1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "85833bc1-3ace-4027-a6ee-f3a517ebc606")
+	)
+	(fp_line
+		(start -1.55 1.5)
+		(end -1.55 -1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "03dd3caf-997c-471b-83f3-0843f447354a")
+	)
+	(fp_line
+		(start -0.09 -1.5)
+		(end -0.09 -1.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "80cafa63-531d-43dc-91e9-6931d861990e")
+	)
+	(fp_line
+		(start -0.09 -1.25)
+		(end 0.09 -1.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "f5d1ebe2-ba86-4775-9bef-0f66b8a7513e")
+	)
+	(fp_line
+		(start -0.09 1.25)
+		(end -0.09 1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "178bfe4a-5f1c-43b4-b2b5-e96107e8e0f0")
+	)
+	(fp_line
+		(start -0.09 1.5)
+		(end -1.55 1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "0d7e3798-0cdb-42ec-8140-15c3fbd19761")
+	)
+	(fp_line
+		(start 0.09 -1.5)
+		(end 1.55 -1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "1a0c91bc-1f09-41a1-891b-5e7bf29e5eca")
+	)
+	(fp_line
+		(start 0.09 -1.25)
+		(end 0.09 -1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "72232750-9d1f-41af-a9d8-32eb0e1e726a")
+	)
+	(fp_line
+		(start 0.09 1.25)
+		(end -0.09 1.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "21f3d38d-4791-46d1-b528-7f007c895357")
+	)
+	(fp_line
+		(start 0.09 1.5)
+		(end 0.09 1.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "e9da7741-0c0e-42ae-9c46-c6e0117bc9e0")
+	)
+	(fp_line
+		(start 1.55 -1.5)
+		(end 1.55 1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "506ae03a-e676-494a-8ae0-f6516b7a6e5f")
+	)
+	(fp_line
+		(start 1.55 1.5)
+		(end 0.09 1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "983b59b9-7925-499a-8fe3-840e571bbc85")
+	)
+	(fp_rect
+		(start -1.25 -1)
+		(end 1.25 1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "e4f3ccb2-ac01-47d1-ad9d-f73e1056011d")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "b3238d01-235a-4e9f-8037-8d549ff5a024")
+		(effects
+			(font
+				(size 0.62 0.62)
+				(thickness 0.09)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at -0.825 0)
+		(size 0.95 2.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "0019cb3a-a0db-48a4-bbef-2ae132277fef")
+	)
+	(pad "2" smd roundrect
+		(at 0.825 0)
+		(size 0.95 2.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "c51371ad-013a-445e-ad40-5243dd4f0c16")
+	)
+	(embedded_fonts no)
+	(model "${KICAD9_3DMODEL_DIR}/Inductor_SMD.3dshapes/L_Changjiang_FTC252012S.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
